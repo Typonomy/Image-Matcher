@@ -76,8 +76,9 @@ while len(imagelist)>0:
     x=(len(imagelist))-1
     
 with open('./MatchedImages.csv', 'w') as f:  #Put the path to the CSV you made here.
-    writer = csv.writer(f)
-    writer.writerows(matches)
+    for match in matches:
+        writer = csv.writer(f)
+        writer.writerow([match])
 print(matches)
 print("Errors: {}".format(errors))
 
